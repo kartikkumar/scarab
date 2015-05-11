@@ -1,0 +1,4 @@
+commentjson==0.4
+matplotlib==1.4.2
+pandas==0.15.2
+scipy==0.14.1

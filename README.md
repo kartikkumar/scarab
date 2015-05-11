@@ -16,11 +16,14 @@ To install this project, please ensure that you have installed the following (in
   - [Git](http://git-scm.com)
   - A C++ compiler, e.g., [GCC](https://gcc.gnu.org/), [clang](http://clang.llvm.org/), [MinGW](http://www.mingw.org/)
   - [CMake](http://www.cmake.org)
+  - [Boost](http://www.boost.org/) (collection of C++ libraries)
   - [Doxygen](http://www.doxygen.org "Doxygen homepage") (optional)
   - [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) (optional)
   - [LCOV](http://ltp.sourceforge.net/coverage/lcov.php) (optional)
 
-`Spot` is dependent upon the following libraries:
+The [Boost](http://www.boost.org/) libraries cannot be automatically downloaded and installed, as is possible for the libraries listed below. This choice has been made because compilation time can be very long. It is recommended that pre-build binaries are installed using e.g., [Homebrew](http://brewformulas.org/Boost) on Mac OS X or [apt-get](https://launchpad.net/ubuntu/+source/boost) on Ubuntu.
+
+In addition, `Scarab` is dependent upon the following libraries:
 
   - [CATCH](https://www.github.com/philsquared/Catch) (unit testing library necessary for `BUILD_TESTS` build option)
   - [Spot](https://www.github.com/kartikkumar/spot) (library containing space proximity operation tools)

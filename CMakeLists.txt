@@ -5,7 +5,7 @@
 # Distributed under the MIT License.
 # See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.4)
 
 # Change this section to correspond with your project info.
 project(Scarab C CXX)
@@ -14,7 +14,7 @@ set(${CMAKE_PROJECT_NAME}_VENDOR_NAME          "Scarab")
 set(${CMAKE_PROJECT_NAME}_VENDOR_CONTACT       "kumar@dinamicatech.com")
 set(${CMAKE_PROJECT_NAME}_VERSION_MAJOR        0)
 set(${CMAKE_PROJECT_NAME}_VERSION_MINOR        0)
-set(${CMAKE_PROJECT_NAME}_VERSION_PATCH        0)
+set(${CMAKE_PROJECT_NAME}_VERSION_PATCH        1)
 set(PROJECT_VERSION
   "${${CMAKE_PROJECT_NAME}_VERSION_MAJOR}.${${CMAKE_PROJECT_NAME}_VERSION_MINOR}.${${CMAKE_PROJECT_NAME}_VERSION_PATCH}")
 
@@ -33,9 +33,9 @@ if(NOT DOCS_PATH)
   set(DOCS_PATH                                "${PROJECT_PATH}/docs")
 endif(NOT DOCS_PATH)
 set(LIB_PATH                                   "${PROJECT_BINARY_DIR}/lib")
-set(LIB_NAME                                   "scarab")
+set(LIB_NAME                                   "scarab_functions")
 set(BIN_PATH                                   "${PROJECT_BINARY_DIR}/bin")
-set(MAIN_NAME                                  "scarab_main")
+set(MAIN_NAME                                  "scarab")
 set(TEST_PATH                                  "${PROJECT_BINARY_DIR}/test")
 set(TEST_NAME                                  "test_scarab")
 
@@ -49,7 +49,9 @@ CMAKE_DEPENDENT_OPTION(BUILD_COVERAGE_ANALYSIS "Build code coverage analysis"   
                                                "BUILD_TESTS"                    OFF)
 
 set(SRC
-  "${SRC_PATH}/helloWorld.cpp"
+  "${SRC_PATH}/accelerationModelListGenerator.cpp"
+  "${SRC_PATH}/simulator.cpp"
+  "${SRC_PATH}/tools.cpp"
 )
 
 set(MAIN_SRC
@@ -58,7 +60,6 @@ set(MAIN_SRC
 
 set(TEST_SRC
   "${TEST_SRC_PATH}/testScarab.cpp"
-  "${TEST_SRC_PATH}/testHelloWorld.cpp"
 )
 
 # Set CMake build-type. If it not supplied by the user, the default built type is "Release".

@@ -1,0 +1,29 @@
+// Copyright (c) 2014-2015 Kartik Kumar, Dinamica Srl
+// Copyright (c) 2014-2015 Marko Jankovic, DFKI GmbH
+// Copyright (c) 2014-2015 Natalia Ortiz, University of Southampton
+// Copyright (c) 2014-2015 Juan Romero, University of Strathclyde
+// Distributed under the MIT License.
+// See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
+
+// Configuration file for Scarab.
+{
+    // Set initial state [km; km/s].
+    "initial_state"             : [, , , , , ],
+
+    // Set numerical integrator parameters.
+    "start_time"                : ,
+    "end_time"                  : ,
+    "initial_step"              : ,
+
+    // Set models to include in simulator.
+    // The models available are:
+    //  - central_gravity (lowest order and degree of spherical harmonics expansion)
+    "models"                    : [""],
+    // Set gravitational parameter of central body [km^3 s^-2].
+    "gravitational_parameter"   : ,
+
+    // Set output file to write state history to.
+    // The output will be written in Comma-Separated Value (CSV) format.
+    "metadata_file"             : "",
+    "state_history_file"        : ""
+}

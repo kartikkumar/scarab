@@ -1,0 +1,28 @@
+// Copyright (c) 2014-2015 Kartik Kumar, Dinamica Srl
+// Copyright (c) 2014-2015 Marko Jankovic, DFKI GmbH
+// Copyright (c) 2014-2015 Natalia Ortiz, University of Southampton
+// Copyright (c) 2014-2015 Juan Romero, University of Strathclyde
+// Distributed under the MIT License.
+// See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
+
+// Configuration file for Scarab plotting script.
+{
+    // Set path to file containing simulation metadata.
+    "metadata"                  : "",
+
+    // Set path to file containing state history data to plot.
+    "state_history"             : "",
+
+    // Set path to file for figure.
+    // Files are saved as PDF.
+    "figure"                    : "",
+
+    // Flag that sets whether interactive 3D figure should be shown (a Python plotting window pops
+    // up).
+    "show_3D_figure"            : true,
+
+    // Set parameters for figures.
+    "figure_dpi"                : ,
+    "tick_label_size"           : ,
+    "axis_label_size"           :
+}
