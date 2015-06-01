@@ -46,9 +46,8 @@ before_install:
 
 install:
   - sudo apt-get install cmake
-  - sudo apt-get install gsl-bin libgsl0ldbl libgsl0-dev
   - sudo apt-get purge libboost*1.46*
-  - sudo apt-get install libboost1.48-all-dev
+  - sudo apt-get install libboost1.55-all-dev
   - sudo apt-get install texlive
   - sudo apt-get autoremove
   - sudo ./scripts/update_doxygen.sh

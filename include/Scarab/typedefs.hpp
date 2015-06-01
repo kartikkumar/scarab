@@ -34,12 +34,6 @@ typedef boost::array< double, 6 > State;
 //! State history.
 typedef std::map< double, State > StateHistory;
 
-//! State history iterator.
-typedef StateHistory::iterator StateHistoryIt;
-
-//! State history iterator.
-typedef StateHistory::const_iterator StateHistoryConstIt;
-
 //! Typedef for list of acceleration model names.
 typedef std::vector< std::string > ListOfModelNames;
 

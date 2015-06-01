@@ -18,7 +18,7 @@ namespace scarab
 
 //! Data store.
 /*!
- * Data store containing all inputs and parameters required for the simulator.
+ * Data store containing all simulator data.
  */
 struct DataStore
 {
@@ -28,23 +28,30 @@ public:
     /*!
      * Calls default constructor.
      *
-     * @param[in] aGravitationalParameter   Gravitational parameter of central body [km^3 s^-2]
-     * @param[in] aState                    Current state
-     * @param[in] aListOfAccelerationModels List of acceleration models executed by simulator.
+     * @param[in] aCurrentState             Current state
+     * @param[in] aCurrentTime              Current time
+     * @param[in] aGravitationalParameter   Gravitational parameter of central body     [km^3 s^-2]
+     * @param[in] aListOfAccelerationModels List of acceleration models executed by
+     *                                      simulator
      */
-    DataStore( const double aGravitationalParameter,
-               const State& aState,
-               const ListOfAccelerationModels& aListOfAccelerationModels )
-        : gravitationalParameter( aGravitationalParameter ),
-          currentState( aState ),
+    DataStore( const State&                     aCurrentState,
+               const double                     aCurrentTime,
+               const double                     aGravitationalParameter,
+               const ListOfAccelerationModels&  aListOfAccelerationModels )
+        : currentState( aCurrentState ),
+          currentTime( aCurrentTime ),
+          gravitationalParameter( aGravitationalParameter ),
           listOfAccelerationModels( aListOfAccelerationModels )
     { }
 
-    //! Gravitational parameter of central body [km^3 s^-2].
-    double gravitationalParameter;
-
     //! Current state vector.
     State currentState;
+
+    //! Current time.
+    double currentTime;
+
+    //! Gravitational parameter [km^3 s^-2].
+    double gravitationalParameter;
 
     //! List of acceleration models.
     ListOfAccelerationModels listOfAccelerationModels;

@@ -17,7 +17,7 @@ namespace scarab
 
 //! Event manager.
 /*!
- * Event manager that excutes after each step taken by the numerical integrator.
+ * Event manager that executes after each step taken by the numerical integrator.
  */
 class EventManager
 {
@@ -57,26 +57,3 @@ private:
 } // namespace scarab
 
 #endif // SCARAB_EVENT_MANAGER_HPP
-
-
-
-
-// //[ integrate_observer
-// struct push_back_state_and_time
-// {
-
-//     Data< Real, State, Acceleration >& data;
-
-//     push_back_state_and_time( std::vector< State > &states , std::vector< double > &timeHistory,
-//                               Data< Real, State, Acceleration >& aDataStore )
-//         : m_states( states ) , m_timeHistory( timeHistory ), data( aDataStore )
-//     { }
-
-//     void operator( )( const State &x , double t )
-//     {
-//         m_states.push_back( x );
-//         m_timeHistory.push_back( t );
-//         data.state = x;
-//     }
-// };
-// //]

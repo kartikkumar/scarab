@@ -40,7 +40,7 @@ int main( const int numberOfInputs, const char* inputArguments[ ] )
 
     std::cout << std::endl;
     std::cout << "******************************************************************" << std::endl;
-    std::cout << "                          Input parameters                        " << std::endl;
+    std::cout << "                        Simulator settings                        " << std::endl;
     std::cout << "******************************************************************" << std::endl;
     std::cout << std::endl;
 

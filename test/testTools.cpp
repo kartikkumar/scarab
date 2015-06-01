@@ -7,6 +7,26 @@
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
 
-#define CATCH_CONFIG_MAIN
-
 #include <catch.hpp>
+
+#include <Scarab/tools.hpp>
+
+namespace scarab
+{
+namespace tests
+{
+
+// @todo: write up test suite.
+
+TEST_CASE( "Test function to find parameters in JSON document", "[tools],[input]" )
+{
+    REQUIRE( false );
+}
+
+TEST_CASE( "Test print functions", "[tools],[output]" )
+{
+    REQUIRE( false );
+}
+
+} // namespace tests
+} // namespace scarab

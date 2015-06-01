@@ -33,7 +33,7 @@ if(NOT DOCS_PATH)
   set(DOCS_PATH                                "${PROJECT_PATH}/docs")
 endif(NOT DOCS_PATH)
 set(LIB_PATH                                   "${PROJECT_BINARY_DIR}/lib")
-set(LIB_NAME                                   "scarab_functions")
+set(LIB_NAME                                   "scarab_methods")
 set(BIN_PATH                                   "${PROJECT_BINARY_DIR}/bin")
 set(MAIN_NAME                                  "scarab")
 set(TEST_PATH                                  "${PROJECT_BINARY_DIR}/test")
@@ -59,7 +59,21 @@ set(MAIN_SRC
 )
 
 set(TEST_SRC
+  "${TEST_SRC_PATH}/testAccelerationModel.cpp"
+  "${TEST_SRC_PATH}/testAccelerationModelId.cpp"
+  "${TEST_SRC_PATH}/testCentralGravitySettings.cpp"
+  "${TEST_SRC_PATH}/testChaserSettings.cpp"
+  "${TEST_SRC_PATH}/testEventManager.cpp"
+  "${TEST_SRC_PATH}/testIntegratorSettings.cpp"
+  "${TEST_SRC_PATH}/testOutputSettings.cpp"
+  "${TEST_SRC_PATH}/testRadiationPressureSettings.cpp"
   "${TEST_SRC_PATH}/testScarab.cpp"
+  "${TEST_SRC_PATH}/testSimulator.cpp"
+  "${TEST_SRC_PATH}/testSimulatorSettings.cpp"
+  "${TEST_SRC_PATH}/testStateDerivativeModel.cpp"
+  "${TEST_SRC_PATH}/testTargetSettings.cpp"
+  "${TEST_SRC_PATH}/testTools.cpp"
+  "${TEST_SRC_PATH}/testTypedefs.cpp"
 )
 
 # Set CMake build-type. If it not supplied by the user, the default built type is "Release".
@@ -102,6 +116,10 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS_RELEASE "-O3")
     set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif(CMAKE_COMPILER_IS_GNUCXX)
+
+# @TODO: C++11 flag is necessary in case of using Homebrew's GCC 5 on Mac OS X.
+#        Compiler seems to be linking to the wrong version of the libstdc++/libc++.
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(AFTER "${INCLUDE_PATH}")
 

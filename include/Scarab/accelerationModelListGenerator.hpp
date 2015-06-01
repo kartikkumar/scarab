@@ -10,8 +10,6 @@
 #ifndef SCARAB_ACCELERATION_MODEL_LIST_GENERATOR_HPP
 #define SCARAB_ACCELERATION_MODEL_LIST_GENERATOR_HPP
 
-#include <map>
-
 #include "Scarab/accelerationModelId.hpp"
 #include "Scarab/dataStore.hpp"
 
@@ -20,15 +18,13 @@ namespace scarab
 
 //! Generate list of acceleration models.
 /*!
- * Generates a list of acceleration models, given string names specified by the user. The data to
- * construct the acceleration models is retrieved from the data store provided.
+ * Generates a list of acceleration models. The data to construct the acceleration models is
+ * retrieved from the simulator data provided.
  *
- * @param[in] listOfModelNames List of string-names of acceleration models specified by user
- * @param[in] data             Data store containing simulation data
- * @return                     List of acceleration model objects.
+ * @param[in] data  Data store containing all simulation data, including populated list of
+ *                  acceleration models
  */
-ListOfAccelerationModels generateAccelerationModelList( const ListOfModelNames& listOfModelNames,
-                                                        const DataStore& data );
+void generateAccelerationModelList( DataStore& data );
 
 } // namespace scarab
 

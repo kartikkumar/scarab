@@ -36,7 +36,9 @@ void print( std::ostream& stream,
 {
     stream << streamHeader << std::endl;
 
-    for ( StateHistoryConstIt it = stateHistory.begin( ); it != stateHistory.end( ); it++ )
+    for ( StateHistory::const_iterator it = stateHistory.begin( );
+          it != stateHistory.end( );
+          it++ )
     {
         stream << std::setprecision( precision )
                << it->first       << ",";

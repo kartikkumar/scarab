@@ -10,15 +10,12 @@
 #ifndef SCARAB_STATE_DERIVATIVE_MODEL_HPP
 #define SCARAB_STATE_DERIVATIVE_MODEL_HPP
 
-#include <boost/array.hpp>
-
 #include "Scarab/accelerationModelId.hpp"
 #include "Scarab/dataStore.hpp"
 #include "Scarab/typedefs.hpp"
 
 namespace scarab
 {
-
 
 //! State derivative model.
 /*!
@@ -36,13 +33,12 @@ public:
     /*!
      * Calls default constructor.
      *
-     * @param[in] simulationData Data store containing simulation data
+     * @param[in] aDataStore Data store containing simulation data
      */
-    StateDerivativeModel( DataStore& simulationData )
-        : data( simulationData )
+    StateDerivativeModel( DataStore& aDataStore )
+        : data( aDataStore )
     { }
 
-    // void operator( )( const State& state, State& stateDerivative, double time )
     void operator( )( const State& state, State& stateDerivative, double time )
     {
         Acceleration acceleration;
@@ -50,7 +46,9 @@ public:
         acceleration[ 1 ] = 0.0;
         acceleration[ 2 ] = 0.0;
         ListOfAccelerationModels modelList = data.listOfAccelerationModels;
-        for ( ListOfModelsIt it = modelList.begin( ); it != modelList.end( ); it++ )
+        for ( ListOfAccelerationModels::iterator it = modelList.begin( );
+              it != modelList.end( );
+              it++ )
         {
             Acceleration _acceleration = ( *it->second )( state, time );
 

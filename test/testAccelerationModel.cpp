@@ -7,6 +7,19 @@
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
 
-#define CATCH_CONFIG_MAIN
-
 #include <catch.hpp>
+
+namespace scarab
+{
+namespace tests
+{
+
+// @todo: write up test suite.
+
+TEST_CASE( "Test acceleration model base class", "[simulator],[settings]" )
+{
+    REQUIRE( false );
+}
+
+} // namespace tests
+} // namespace scarab

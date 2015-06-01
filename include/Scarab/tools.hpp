@@ -36,6 +36,23 @@ typedef rapidjson::Value::ConstMemberIterator ConfigIterator;
  */
 ConfigIterator find( const rapidjson::Document& config, const std::string& parameterName );
 
+//! Print state history to stream.
+/*!
+ * Prints state history to stream provided, given a specified state history object, a stream
+ * header and a number of digits of precision.
+ *
+ * @param[out] stream        Output stream
+ * @param[in]  stateHistory  State history containing epochs and associated state vectors
+ * @param[in]  streamHeader  A header for the output stream (file header if a file stream is
+ *                           provided) (default = "")
+ * @param[in]  precision     Digits of precision for state history entries printed to stream
+ *                           (default = number of digits of precision for a double)
+ */
+void print( std::ostream& stream,
+            const StateHistory stateHistory,
+            const std::string& streamHeader = "",
+            const int precision = std::numeric_limits< double >::digits10 );
+
 //! Print value to stream.
 /*!
  * Prints a specified value to stream provided, given a specified width and a filler character.
@@ -48,7 +65,7 @@ ConfigIterator find( const rapidjson::Document& config, const std::string& param
  * @param[in]  filler    Character used to fill fixed-width (default = ' ')
  */
 template< typename DataType >
-inline void print( std::ostream& stream,
+void print( std::ostream& stream,
                    const DataType value,
                    const int width = 25,
                    const char filler = ' ' )
@@ -72,7 +89,7 @@ inline void print( std::ostream& stream,
  * @param[in]  filler        Character used to fill fixed-width (default = ' ')
  */
 template< typename DataType >
-inline void print( std::ostream& stream,
+void print( std::ostream& stream,
                    const std::string& parameterName,
                    const DataType value,
                    const std::string& units,
@@ -87,23 +104,6 @@ inline void print( std::ostream& stream,
     print( stream, units, width, filler );
     stream << std::endl;
 }
-
-//! Print state history to stream.
-/*!
- * Prints state history to stream provided, given a specified state history object, a stream
- * header and a number of digits of precision.
- *
- * @param[out] stream        Output stream
- * @param[in]  stateHistory  State history containing epochs and associated state vectors
- * @param[in]  streamHeader  A header for the output stream (file header if a file stream is
- *                           provided) (default = "")
- * @param[in]  precision     Digits of precision for state history entries printed to stream
- *                           (default = number of digits of precision for a double)
- */
-void print( std::ostream& stream,
-            const StateHistory stateHistory,
-            const std::string& streamHeader = "",
-            const int precision = std::numeric_limits< double >::digits10 );
 
 } // namespace scarab
 

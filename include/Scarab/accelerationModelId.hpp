@@ -23,7 +23,8 @@ namespace scarab
  */
 enum AccelerationModelId
 {
-    centralGravityModel = 0
+    centralGravityModelId = 0,
+    radiationPressureModelId = 1
 };
 
 //! List of acceleration models.
@@ -31,9 +32,6 @@ enum AccelerationModelId
  * List of acceleration models, stored with a unique identifier.
  */
 typedef std::map< AccelerationModelId, AccelerationModel3dPtr > ListOfAccelerationModels;
-
-typedef ListOfAccelerationModels::iterator ListOfModelsIt;
-typedef ListOfAccelerationModels::const_iterator ListOfModelsConstIt;
 
 } // namespace scarab
 

@@ -30,18 +30,19 @@ public:
 
     //! Compute acceleration.
     /*!
-     * Computes acceleration by overloading ()-operator. This if a pure virtual function, hence it
-     * must be implemented by any derived classes.
+     * Computes acceleration by overloading ()-operator.
      *
-     * @param[in] state Current state
-     * @param[in] time  Current time
-     * @return          Computed acceleration
+     * This if a pure virtual function, hence it must be implemented by any derived classes.
+     *
+     * @param[in] state Current state                                                     [km]
+     * @param[in] time  Current time                                                      [s]
+     * @return          Computed Acceleration                                             [km s^-2]
      */
     virtual Acceleration operator( )( const State& state, const double time ) = 0;
 
     //! Default destructor.
     /*!
-     * Default (virtual) destructor.
+     * Calls default (virtual) destructor.
      */
     virtual ~AccelerationModel( ) { }
 
